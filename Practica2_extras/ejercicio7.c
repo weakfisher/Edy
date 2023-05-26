@@ -43,6 +43,11 @@ void slist_recorrer(SList lista){
     }
     puts("");
 }
+/* 
+Se pide entonces, dadas dos listas enlazadas, encontrar la intersecci ́on de las mismas, es decir, el nodo a
+partir del cual las dos listas siguen igual (o la direcci ́on nula en caso de no tener nodos en com ́un). Para
+el ejemplo anterior, se deber ́ıa retornar la direcci ́on del nodo 7
+ */
 
 SList interseccion_listas(SList lista1, SList lista2){
     
