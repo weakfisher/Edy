@@ -22,7 +22,13 @@ void cola_encolar(Cola cola, void* dato, FuncionCopia copia){
     GNode * nuevoNodo =malloc(sizeof(GNode));
     nuevoNodo->data = copia(dato);
     nuevoNodo->next = NULL;
-    cola->ultimo = nuevoNodo;
+    if (cola_es_vacio(cola)) {
+        cola->primero = nuevoNodo;
+        cola->ultimo = nuevoNodo;
+    } else {
+        cola->ultimo->next = nuevoNodo;
+        cola->ultimo = nuevoNodo;
+    }
 }
     
 void cola_desencolar(Cola cola, FuncionDestructora destroy){

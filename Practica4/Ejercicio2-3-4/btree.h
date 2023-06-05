@@ -1,8 +1,8 @@
 #ifndef __BTREE_H__
 #define __BTREE_H__
 
-typedef void (*FuncionVisitante) (void* dato);
-
+typedef void (*FuncionVisitante) (int dato);
+typedef void (*FuncionVisitanteExtra) (int dato, void *extra);
 typedef enum {
   BTREE_RECORRIDO_IN,
   BTREE_RECORRIDO_PRE,
@@ -43,7 +43,18 @@ BTree btree_unir(int dato, BTree left, BTree right);
  */
 void btree_recorrer(BTree arbol, BTreeOrdenDeRecorrido orden,FuncionVisitante visit);
 
+int btree_buscar(BTree raiz, int num);
+
+BTree btree_copiar(BTree raiz);
+
+int btree_nnodos_profundidad(BTree raiz, int profundidadBuscada,int profundidadActual);
+
+int btree_profundiad(BTree raiz,int objetivo);
+
 void in_order(BTree raiz, FuncionVisitante visit);
 void post_order(BTree raiz, FuncionVisitante visit);
 void pre_order(BTree raiz, FuncionVisitante visit);
+
+void btree_recorrer_extra(BTree arbol, BTreeOrdenDeRecorrido orden,FuncionVisitanteExtra visit, void *extra);
+
 #endif /* __BTREE_H__ */

@@ -5,9 +5,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
 
-SRC =  dglist.c cola.c btree.c  test.c
+SRC =   btree.c  text.c 
 OBJ = $(SRC:.c=.o)
-HEADER =  dglist.h cola.h btree.h 
+HEADER = cola.h btree.h  
 EXECUTABLE = programa
 
 

@@ -1,12 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "btree.h"
-#include "cola.h"
 static void imprimir_entero(int data) {
   printf("%d ", data);
 }
-
-
 
 /* Calcule la suma de los elementos de un  ́arbol de enteros. */
 int suma_tree(BTree raiz){
@@ -42,13 +39,11 @@ int btree_altura(BTree raiz){
   return altI+1;}
 }
 
-/*  utilice  el  recorrido primero  por  extensi ́on
- */
-  void btree_recorrer_bfs(BTree raiz){
-    Cola cola = cola_crear();
-  }
+
+
 
 int main() {
+
   BTree ll = btree_unir(1, btree_crear(), btree_crear());
   BTree l = btree_unir(2, ll, btree_crear());
   BTree r = btree_unir(3, btree_crear(), btree_crear());
@@ -56,18 +51,38 @@ int main() {
 
 
 /* EJERCICIO 2
-  A) 
+  d) 
   printf("La altura del arbol es %i \n", btree_altura(raiz));
-  B)
+
+  g)
   printf("La suma total del arbol es %i \n", suma_tree(raiz));
-  C)
+
+  a)
   printf("La cantidad de nodos del arbol es %i \n", suma_nodos(raiz));
  */
 
+  // b)
+  //int num =btree_buscar(raiz,1); 
+  //printf("retorne 1 si el n ́umero dado se encuentra en el  ́arbol, y 0 en caso contrario %i \n",num );
+
+
+  // c)
+  //BTree copiaarbol = btree_crear();
+  //copiaarbol = btree_copiar(raiz);
+
+
+  //e)
+  //printf("ddd %i",btree_nnodos_profundidad(raiz,1,0));
+
+  // f)
+  //printf("%i",btree_profundiad(raiz,2));
+
+  //btree_recorrer(copiaarbol, BTREE_RECORRIDO_PRE, imprimir_entero);
+
+
 
   // EJERCICIO 3
-  //btree_recorrer(raiz, BTREE_RECORRIDO_POST, imprimir_entero);
-  puts("");
-  btree_destruir(raiz);
+  //puts("");
+  //btree_destruir(raiz);
   return 0;
 }

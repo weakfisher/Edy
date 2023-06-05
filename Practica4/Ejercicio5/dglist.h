@@ -2,11 +2,10 @@
 
 #ifndef __SGLIST_H__
 #define __SGLIST_H__
-
 typedef void (*FuncionDestructora)(void* dato);
 typedef void* (*FuncionCopia)(void* dato);
-typedef void (*FuncionVisitante)(void* dato);
 typedef int (*FuncionComparadora)(void* dato1, void* dato2);
+typedef void (*FuncionVisitante) (int dato);
 
 typedef struct _GNode {
     void* data;
